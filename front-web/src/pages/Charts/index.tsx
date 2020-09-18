@@ -58,7 +58,7 @@ const [genderDada, SetGenderDada] = useState<PieChartData>(initialPieData);
                   <Chart 
                     options={barOptions}
                     type="bar"
-                    width="900"
+                    width="650"
                     height="650"
                     series={[{data: BarCharData }]}
                     />
@@ -71,7 +71,7 @@ const [genderDada, SetGenderDada] = useState<PieChartData>(initialPieData);
                   options={{...pieOptions, labels: PlatformDada?.labels}}
                   type="donut"
                   series={PlatformDada?.series}
-                  width="350"
+                  width="240"
                 /> 
               </div>
               <div className="gender-chart">
@@ -80,7 +80,7 @@ const [genderDada, SetGenderDada] = useState<PieChartData>(initialPieData);
                   options={{...pieOptions, labels: genderDada?.labels}}
                   type="donut"
                   series={genderDada?.series}
-                  width="350"
+                  width="240"
                 />                 
               </div>
             </div>
