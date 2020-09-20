@@ -22,7 +22,7 @@ const initialPieData = {
     series: []
 }
 
-const BASE_URL = 'http://localhost:8080'
+const BASE_URL = 'https://sds1-marcelo.herokuapp.com';
 
 const Charts = () => {
 const [BarCharData, setBarCharData] = useState<BarCharData[]>([]);
@@ -46,47 +46,47 @@ const [genderDada, SetGenderDada] = useState<PieChartData>(initialPieData);
        getData();
     }, [])
 
-    return (
-      <div className="page-container">
-          <Filters link="/records" linkText="VER TABELA"/>
-          <div className="chart-container">
-            <div className="top-related">
-                <h1 className="top-related-title">
-                    Jogos mais votados
-                </h1> 
-                <div className="games-container">
-                  <Chart 
-                    options={barOptions}
-                    type="bar"
-                    width="650"
-                    height="650"
-                    series={[{data: BarCharData }]}
-                    />
-                </div>
+  return (
+    <div className="page-container">
+        <Filters link="/records" linkText="VER TABELA"/>
+        <div className="chart-container">
+          <div className="top-related">
+              <h1 className="top-related-title">
+                  Jogos mais votados
+              </h1> 
+              <div className="games-container">
+                <Chart 
+                  options={barOptions}
+                  type="bar"
+                  width="650"
+                  height="650"
+                  series={[{data: BarCharData }]}
+                  />
+              </div>
+          </div>
+          <div className="charts"> 
+            <div className="platform-chart">
+              <h2 className="chart-title">Plataformas</h2>
+              <Chart 
+                options={{...pieOptions, labels: PlatformDada?.labels}}
+                type="donut"
+                series={PlatformDada?.series}
+                width="240"
+              /> 
             </div>
-            <div className="charts"> 
-              <div className="platform-chart">
-                <h2 className="chart-title">Plataformas</h2>
-                <Chart 
-                  options={{...pieOptions, labels: PlatformDada?.labels}}
-                  type="donut"
-                  series={PlatformDada?.series}
-                  width="240"
-                /> 
-              </div>
-              <div className="gender-chart">
-                <h2 className="chart-title">Gêneros</h2>
-                <Chart 
-                  options={{...pieOptions, labels: genderDada?.labels}}
-                  type="donut"
-                  series={genderDada?.series}
-                  width="240"
-                />                 
-              </div>
+            <div className="gender-chart">
+              <h2 className="chart-title">Gêneros</h2>
+              <Chart 
+                options={{...pieOptions, labels: genderDada?.labels}}
+                type="donut"
+                series={genderDada?.series}
+                width="240"
+              />                 
             </div>
           </div>
-      </div>
-    )
+        </div>
+    </div>
+  )
 }
 
 export default Charts;
