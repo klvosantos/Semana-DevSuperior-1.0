@@ -58,7 +58,7 @@ Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://github.com/klvosantos/sds1
 
 # entrar na pasta do projeto front end web
 cd front-web
